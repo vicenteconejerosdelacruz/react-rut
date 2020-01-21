@@ -28,7 +28,7 @@ class Rut extends Component {
 	}
 
 	 
-	rutValido(rut) => {
+	rutValido = (rut) => {
 		return formato(rut) && digitoVerificador(rut)
 	}
 		
@@ -54,7 +54,7 @@ class Rut extends Component {
 	onChange = (e) => {
 		e.target.value = this.reformat(this.props.value,e.target.value)
 		this.props.onChange(e)
-		if(this.props.onValid) this.props.onValid(this.rutValido(value))
+		if(this.props.onValid) this.props.onValid(this.rutValido(e.target.value))
 	}
 	
 	
