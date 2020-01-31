@@ -35,10 +35,11 @@ class Rut extends Component {
 	reformat = (rutViejo,rutNuevo) => {
 		let digitos = ['0','1','2','3','4','5','6','7','8','9','K','k']
 		let digitoValido = (digito) => digitos.includes(digito)			
+		let quitarDV = (digito,index,array) => (index<(array.length-1))?!(['K','k'].includes(digito)):true
 		
 		if(rutNuevo !==''){
 			
-			let chars = rutNuevo.split('').filter(digitoValido)
+			let chars = rutNuevo.split('').filter(digitoValido).filter(quitarDV)
 			let digito = chars[chars.length-1]
 			
 			if(digitoValido(digito)){
