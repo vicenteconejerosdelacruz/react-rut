@@ -20,7 +20,7 @@ class Rut extends Component {
 	
 	digitoVerificador = (rut) => {
 		let multiplos = [2,3,4,5,6,7]
-		let digitos = rut.split('-')[0].split('').reverse()
+		let digitos = rut.split('-')[0].replace(/\./g,'').split('').reverse()
 		let digitoVerificador = rut.split('-')[1].toUpperCase()
 		let digito = 11 - digitos.reduce((acc,elem,index)=>(acc+Number(elem)*multiplos[index%multiplos.length]),0)%11
 		let digimap = [NaN,'1','2','3','4','5','6','7','8','9','K','11']	
@@ -29,7 +29,7 @@ class Rut extends Component {
 
 	 
 	rutValido = (rut) => {
-		return formato(rut) && digitoVerificador(rut)
+		return this.formato(rut) && this.digitoVerificador(rut)
 	}
 		
 	reformat = (rutViejo,rutNuevo) => {
