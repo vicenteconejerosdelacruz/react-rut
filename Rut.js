@@ -23,7 +23,7 @@ class Rut extends Component {
 		let digitos = rut.split('-')[0].replace(/\./g,'').split('').reverse()
 		let digitoVerificador = rut.split('-')[1].toUpperCase()
 		let digito = 11 - digitos.reduce((acc,elem,index)=>(acc+Number(elem)*multiplos[index%multiplos.length]),0)%11
-		let digimap = [NaN,'1','2','3','4','5','6','7','8','9','K','11']	
+		let digimap = [NaN,'1','2','3','4','5','6','7','8','9','K','0']	
 		return digimap[digito]===digitoVerificador
 	}
 
