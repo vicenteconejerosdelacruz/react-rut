@@ -2,7 +2,7 @@
   "name": "react-rut",
   "version": "1.0.0",
   "description": "A component to deal with chilean rut",
-  "main": "index.js"
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vichoconejeros/react-rut.git"
